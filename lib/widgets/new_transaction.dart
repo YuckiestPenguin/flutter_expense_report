@@ -25,13 +25,15 @@ class NewTransaction extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                FlatButton(
-                    textColor: Colors.purple,
-                    child: Text('Add Transaction'),
-                    onPressed: (() {
-                      addTransaction(titleController.text,
-                          double.parse(amountController.text));
-                    })),
+                FloatingActionButton(
+                  child: Icon(Icons.add),
+                  backgroundColor: Colors.pink,
+                  mini: true,
+                  onPressed: (() {
+                    addTransaction(titleController.text,
+                        double.parse(amountController.text));
+                  }),
+                ),
               ],
             ),
           ],
