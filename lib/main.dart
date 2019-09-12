@@ -19,6 +19,11 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  // String titleInput;
+  // String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   final List<Transaction> transactions = [
     Transaction(
       id: 't1',
@@ -56,16 +61,19 @@ class MyHomePage extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      controller: titleController,
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
+                      controller: amountController,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         FlatButton(
-                          textColor: Colors.purple,
-                            child: Text('Add Transaction'), onPressed: (() {})),
+                            textColor: Colors.purple,
+                            child: Text('Add Transaction'),
+                            onPressed: (() {})),
                       ],
                     ),
                   ],
