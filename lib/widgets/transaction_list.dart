@@ -12,7 +12,7 @@ class TransactionList extends StatelessWidget {
       height: 500,
       child: transactions.isEmpty
           ? Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 Text('No Transactions!'),
                 Container(
