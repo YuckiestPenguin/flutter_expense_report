@@ -54,7 +54,7 @@ class _NewTransactionState extends State<NewTransaction> {
               children: <Widget>[
                 FloatingActionButton(
                   child: Icon(Icons.add),
-                  backgroundColor: Colors.pink,
+                  backgroundColor: Theme.of(context).accentColor,
                   mini: true,
                   onPressed: submitData,
                 ),
