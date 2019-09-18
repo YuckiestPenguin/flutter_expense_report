@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_expense_report/models/transaction.dart';
+import '../models/transaction.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransactions;
@@ -20,10 +20,7 @@ class Chart extends StatelessWidget {
         }
       }
 
-      print(DateFormat.E(weekDay));
-      print(totalSum);
-
-      return {'day': DateFormat.E(weekDay), 'amount': totalSum};
+      return {'day': DateFormat.E().format(weekDay), 'amount': totalSum};
     });
   }
 
@@ -33,7 +30,9 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Row(
-        children: <Widget>[],
+        children: <Widget>[
+          Text('Testing')
+        ],
       ),
     );
   }
