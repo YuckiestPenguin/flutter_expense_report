@@ -50,14 +50,27 @@ class _NewTransactionState extends State<NewTransaction> {
               onSubmitted: (_) => submitData(),
             ),
             Row(
+              children: <Widget>[
+                Text('No Date Chosen'),
+                FlatButton(
+                  textColor: Theme.of(context).primaryColor,
+                  child: Text(
+                    'Choose date',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: submitData,
+                )
+              ],
+            ),
+            Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                FloatingActionButton(
-                  child: Icon(Icons.add),
-                  backgroundColor: Theme.of(context).accentColor,
-                  mini: true,
+                RaisedButton(
                   onPressed: submitData,
-                ),
+                  color: Theme.of(context).primaryColor,
+                  child: Text('Add Transaction'),
+                  textColor: Theme.of(context).textTheme.button.color,
+                )
               ],
             ),
           ],
