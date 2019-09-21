@@ -5,12 +5,13 @@ import 'package:intl/intl.dart';
 class TransactionList extends StatelessWidget {
   final Function deleteTransaction;
   final List<Transaction> transactions;
+
   TransactionList(this.transactions, this.deleteTransaction);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 430,
       child: transactions.isEmpty
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
