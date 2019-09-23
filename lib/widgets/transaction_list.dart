@@ -11,16 +11,19 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return transactions.isEmpty
-        ? Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                child: Image.asset(
-                  'assets/img/flowers.png',
-                ),
-              )
-            ],
-          )
+        ? LayoutBuilder(builder: (ctx, constraints) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  height: constraints.maxHeight * .6,
+                  child: Image.asset(
+                    'assets/img/flowers.png',
+                  ),
+                )
+              ],
+            );
+          })
         : ListView.builder(
             itemBuilder: (ctx, idx) {
               return Card(
