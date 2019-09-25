@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'adaptive_flat_button.dart';
 
 class NewTransaction extends StatefulWidget {
   final Function addTransaction;
@@ -77,26 +78,14 @@ class _NewTransactionState extends State<NewTransaction> {
                   Text(_selectedDate == null
                       ? 'No Date Choosen'
                       : DateFormat.yMd().format(_selectedDate)),
-                      Platform.isIOS? CupertinoButton(
-                        onPressed: _presentDatePicker,
-                        child: Text('Choose Date')
-                      ) :
-                   FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text(
-                      'Choose date',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: _presentDatePicker,
-                  )
+                  AdaptiveFlatButton('Chooase Date', _presentDatePicker)
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Platform.isIOS
-                      ?
-                       CupertinoButton.filled(
+                      ? CupertinoButton.filled(
                           onPressed: _submitData,
                           child: Text('Add Transaction'),
                         )
